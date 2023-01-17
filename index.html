@@ -10,12 +10,42 @@
     <h1>Rock Papper Scissors</h1>
     <h2>Check the console dude.</h2>
 
+    <form></form>
+
 
 
 
 
     <script>
-        
+        console.log('Hello World');
+/*         const rock = 1;
+        const papper = 2;
+        const scissor = 3; */
+
+        let computerChoice;
+
+        function getComputerChoice() {
+            let election = Math.ceil(Math.random() * 3);
+            switch (election) {
+                case election = 1:
+                    computerChoice = 'rock';
+                    return computerChoice;
+                    break;
+                case election = 2:
+                    computerChoice = 'papper';
+                    return computerChoice;
+                    break;
+                case election = 3:
+                    computerChoice = 'scissor';
+                    return computerChoice;
+                    break;
+            }
+        }
+        getComputerChoice();
+        console.log(computerChoice);
+
+
+
 
 
 
