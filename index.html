@@ -10,7 +10,7 @@
     <h1>Rock Papper Scissors</h1>
     <h2>Check the console dude.</h2>
 
-    <form></form>
+    <form ></form>
 
 
 
@@ -23,6 +23,8 @@
         const scissor = 3; */
 
         let computerChoice;
+        let playerChoice;
+        let gameMessage;
 
         function getComputerChoice() {
             let election = Math.ceil(Math.random() * 3);
@@ -42,7 +44,23 @@
             }
         }
         getComputerChoice();
-        console.log(computerChoice);
+        console.log(`Computer choice ${computerChoice}`);
+/* Sera desde un punto de vista de la computadora al jugador, se evalua primero la que el resultado de la computadora y luego el jugador
+
+por tanto, sera una anidacion de if con switches */
+
+        playerChoice = 'rock';
+
+        function playRound(computerSelection, playerSelection) {
+            computerSelection = computerChoice;
+            playerSelection = playerChoice;
+
+            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}`;
+            return gameMessage;   
+        }
+
+        playRound();
+        console.log(gameMessage);
 
 
 
