@@ -25,6 +25,9 @@
         let computerChoice;
         let playerChoice;
         let gameMessage;
+        let playerWinCount = 0;
+        let computerWinCount = 0;
+        let gameOverMessage;
 
         function getComputerChoice() {
             let election = Math.ceil(Math.random() * 3);
@@ -49,10 +52,10 @@
 
 por tanto, sera una anidacion de if con switches */
 
-        playerChoice = 'rock';
 
         function playRound(computerSelection, playerSelection) {
-            getComputerChoice();
+            /* getComputerChoice(); */
+            playerChoice = playerChoice.toLowerCase();
             computerSelection = computerChoice;
             playerSelection = playerChoice;
             /*Game Round*/
@@ -76,7 +79,6 @@ por tanto, sera una anidacion de if con switches */
                             gameMessage = `Player, please select something`;
                             break;
                     }
-                    /* gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, according to switch`; */
                     break;
 
                 /*Papper Scenario*/
@@ -124,16 +126,82 @@ por tanto, sera una anidacion de if con switches */
                 default:
                     gameMessage = `something goes bad with the computer :(`;
             }
-            /* if (computerSelection == 'rock') {
-                gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, according to if`;
-            } else if (computerSelection == 'papper') {
-                gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, according to if`;
-            } else if (computerSelection == 'scissor') {
-                gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, according to if`;
-            } */
-            /* gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}`; */
             return gameMessage;   
         }
+
+
+/* Function to count the mount of wins of the computer*/
+        function computerScore(computerSelection, playerSelection) {
+            playerChoice = playerChoice.toLowerCase();
+            computerSelection = computerChoice;
+            playerSelection = playerChoice;
+
+            switch (computerSelection) {
+                case computerSelection = 'rock':
+                    playerSelection == 'scissor' ? ++computerWinCount : computerWinCount;
+                    break;
+                case computerSelection = 'papper':
+                    playerSelection == 'rock' ? ++computerWinCount : computerWinCount;
+                    break;
+                case computerSelection = 'scissor':
+                    playerSelection == 'papper' ? ++computerWinCount : computerWinCount;
+                    break;
+
+            }
+            return computerWinCount;
+        }
+
+
+/* Function to count the mount of wins of the player*/
+        function playerScore(computerSelection, playerSelection) {
+            playerChoice = playerChoice.toLowerCase();
+            computerSelection = computerChoice;
+            playerSelection = playerChoice;
+
+            switch (computerSelection) {
+                case computerSelection = 'rock':
+                    playerSelection == 'papper' ? ++playerWinCount : playerWinCount;
+                    break;
+                case computerSelection = 'papper':
+                    playerSelection == 'scissor' ? ++playerWinCount : playerWinCount;
+                    break;
+                case computerSelection = 'scissor':
+                    playerSelection == 'rock' ? ++playerWinCount : playerWinCount;
+                    break;
+
+            }
+            return playerWinCount;
+        }
+
+
+
+
+
+/*Game working on*/
+        function game() {
+            playerWinCount = 0;
+            computerWinCount = 0;
+
+            for (let i = 0; i < 5; i++) {
+                getComputerChoice();
+                playerChoice = prompt('please enter rock, papper or scissor',);
+                playRound();
+                computerScore();
+                playerScore();
+                console.log(gameMessage);
+            }
+
+            console.log('GAME OVER!');
+            if (playerWinCount > computerWinCount) {
+                console.log('PLAYER HAS WON!!! nice');
+            } else if (playerWinCount < computerWinCount) {
+                console.log('Computer has Won! too bad friend');
+            } else {
+                console.log("It's a DRAW, no one won haha ");
+            }
+        }
+
+
 
         playRound();
         console.log(gameMessage);
