@@ -52,10 +52,86 @@ por tanto, sera una anidacion de if con switches */
         playerChoice = 'rock';
 
         function playRound(computerSelection, playerSelection) {
+            getComputerChoice();
             computerSelection = computerChoice;
             playerSelection = playerChoice;
+            /*Game Round*/
+            switch (computerSelection) {
+                /*Rock Scenario*/
+                case computerSelection = 'rock':
+                    switch (playerSelection) {
 
-            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}`;
+                        case playerSelection = 'rock':
+                            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, It's a Draw!`;
+                            break;
+
+                        case playerSelection = 'papper':
+                            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, Player WIN!!!`;
+                            break;
+
+                        case playerSelection = 'scissor':
+                            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, Player Lose! D:`;
+                            break;
+                        default:
+                            gameMessage = `Player, please select something`;
+                            break;
+                    }
+                    /* gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, according to switch`; */
+                    break;
+
+                /*Papper Scenario*/
+                case computerSelection = 'papper':
+                    switch (playerSelection) {
+
+                        case playerSelection = 'rock':
+                            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, Player Lose! D:`;
+                            break;
+
+                        case playerSelection = 'papper':
+                            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, It's a Draw!`;
+                            break;
+
+                        case playerSelection = 'scissor':
+                            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, Player WIN!!!`;
+                            break;
+                        default:
+                            gameMessage = `Player, please select something`;
+                            break;
+                        }
+                    break;
+
+                /*Scissors Scenario*/
+                case computerSelection = 'scissor':
+                    switch (playerSelection) {
+
+                        case playerSelection = 'rock':
+                            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, Player WIN!!!`;
+                            break;
+
+                        case playerSelection = 'papper':
+                            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, Player Lose! D:`;
+                            break;
+
+                        case playerSelection = 'scissor':
+                            gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, It's a Draw!`;
+                            break;
+                        default:
+                            gameMessage = `Player, please select something`;
+                            break;
+                        }
+                    break;
+
+                default:
+                    gameMessage = `something goes bad with the computer :(`;
+            }
+            /* if (computerSelection == 'rock') {
+                gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, according to if`;
+            } else if (computerSelection == 'papper') {
+                gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, according to if`;
+            } else if (computerSelection == 'scissor') {
+                gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}, according to if`;
+            } */
+            /* gameMessage = `The player chose ${playerSelection}, while the computer chose ${computerSelection}`; */
             return gameMessage;   
         }
 
