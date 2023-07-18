@@ -7,10 +7,7 @@
     <title>Rock Papper Scissors</title>
     <!--START OF THE CSS FOR THIS PROJECT-->
     <style>
-    
 
-
-    
     </style>
     <!--END OF THE CSS FOR THIS PROJECT-->
 </head>
@@ -23,7 +20,7 @@
 
 
 
-<!--JAVA SCRIPT para este -->
+<!--START OF THE JAVA SCRIPT FOR THIS PROJECT-->
     <script>
         console.log('Hello World');
 /*         const rock = 1;
@@ -139,7 +136,25 @@ por tanto, sera una anidacion de if con switches */
 
 
 /* Function to count the mount of wins of the computer*/
- 
+        function computerScore(computerSelection, playerSelection) {
+            playerChoice = playerChoice.toLowerCase();
+            computerSelection = computerChoice;
+            playerSelection = playerChoice;
+
+            switch (computerSelection) {
+                case computerSelection = 'rock':
+                    playerSelection == 'scissor' ? ++computerWinCount : computerWinCount;
+                    break;
+                case computerSelection = 'papper':
+                    playerSelection == 'rock' ? ++computerWinCount : computerWinCount;
+                    break;
+                case computerSelection = 'scissor':
+                    playerSelection == 'papper' ? ++computerWinCount : computerWinCount;
+                    break;
+
+            }
+            return computerWinCount;
+        }
 
 
 /* Function to count the mount of wins of the player*/
@@ -204,5 +219,6 @@ por tanto, sera una anidacion de if con switches */
 
 
     </script>
+<!--END OF THE JAVASCRIPT FOR THIS PROJECT-->
 </body>
 </html>
